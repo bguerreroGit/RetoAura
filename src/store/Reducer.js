@@ -25,6 +25,7 @@ const Reducer = (prevState, action) => {
     case 'ADD_MAIL':
       return {
         ...prevState,
+        mailsData: [action.mail, ...prevState.mailsData],
         filteredMailsData: [action.mail, ...prevState.filteredMailsData],
         unreadMails: prevState.unreadMails + 1,
       };
